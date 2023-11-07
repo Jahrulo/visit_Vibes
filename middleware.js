@@ -1,6 +1,6 @@
 
 // a middleware that protect users from making and deleting hotels if they are not logged in
-// u gotte be logged in in other to make changes 
+// u gotte be logged in in other to make changes.
 const { reviewSchema, hotelSchema } = require('./views/schemas');
 const expressError = require('./utils/expressError');
 const Hotel = require('./Models/Hotel');
