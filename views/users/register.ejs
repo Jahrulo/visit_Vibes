@@ -1,0 +1,48 @@
+<% layout('layouts/bootstrap')%>
+<script src="https://use.fontawesome.com/f59bcd8580.js"></script>
+<link rel="stylesheet" href="/styles/login.css">
+
+<div class="container">
+    <div class="row m-5 no-gutters shadow-lg">
+        <div class="col-md-6 d-none d-md-block">
+            <img src="https://media.digitalnomads.world/wp-content/uploads/2021/11/20114729/freetown-sierra-leone-digital-nomads.jpg" class="img-fluid" style="min-height:100%;" />
+            </div>
+            <div class="col-md-6 bg-white p-5">
+                <h3 class="pb-3">Sign Up </h3>
+                <div class="form-style">
+                    <form action="/register" method="POST" class="validated-form" novalidate>
+                        <div class="form-group pb-3">
+                            <label class="form-label" for="username">Username</label>
+                            <input class="form-control" type="text" id="username" name="username" required>
+                            <div class="valid-feedback">
+                                good!
+                            </div>
+                            </div>
+                       
+                        <div class="form-group pb-3">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" type="email" id="email" name="email" required>
+                            <div class="valid-feedback">
+                                good!
+                            </div>
+                        </div>
+
+                        <div class="form-group pb-3">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                            <div class="valid-feedback">
+                                good!
+                            </div>
+                        </div>
+                        <button class="btn btn-dark w-100 font-weight-bold mt-2">Sign Up</button>
+                  </form>
+                    <div class="sideline">OR</div>
+            
+                    <div class="pt-4 text-center">
+                    Already have an account?. <a href="/login">Login</a>
+                    </div>
+                </div>
+                </div>
+           </div>
+    </div>
+  

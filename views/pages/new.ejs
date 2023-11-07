@@ -1,0 +1,63 @@
+<% layout('layouts/bootstrap')%>
+<link rel="stylesheet" href="/styles/login.css">
+
+<div class="container">
+        <div class="row m-5 no-gutters shadow-lg">
+            <div class="col-md-6 d-none d-md-block">
+                <img src="https://media.digitalnomads.world/wp-content/uploads/2021/11/20114729/freetown-sierra-leone-digital-nomads.jpg" class="img-fluid" style="min-height:100%;" />
+                </div>
+                <div class="col-md-6 bg-white p-5">
+                    <h1 class="text-center">New Hotel</h1>
+                    <div class="form-style">
+                        <form action="/hotels" method="POST" novalidate class="validated-form" enctype="multipart/form-data" >
+                            <div class="form-group pb-3">
+                                <label class="form-label" for="title">Title</label>
+                                <input class="form-control" type="text" id="title" name="hotel[title]" required>
+                               <div class="valid-feedback">
+                                    good!
+                                </div>
+                            </div>
+    
+                            <div class="form-group pb-3">
+                                <label class="form-label" for="location">Location</label>
+                                <input class="form-control" type="text" id="location" name="hotel[location]" required>
+                                <div class="valid-feedback">
+                                    good!
+                                </div>
+                            </div>
+
+                            <div class="form-group pb-3">
+                                <label for="formFileMultiple" class="form-label">Upload Images</label>
+                                <input type="file" class="form-control" id="image" name="image" multiple>
+                                <div class="valid-feedback">
+                                    good!
+                                </div>
+                            </div>
+
+                            <div class="form-group pb-3">
+                                <label class="form-label" for="price">Hotel Price</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="price-label">$</span>
+                                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                                    aria-describedby="price-label" name="hotel[price]" required>
+                                     <div class="valid-feedback">
+                                                        good!
+                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group pb-3">
+                                <label class="form-label" for="description">Description</label>
+                                <textarea class="form-control" type="text" id="description" name="hotel[description]" required></textarea>
+                               <div class="valid-feedback">
+                                    good!
+                                </div>
+                            </div>
+                            <button class="btn btn-dark w-100 font-weight-bold mt-2">Add Hotel</button>
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    
