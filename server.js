@@ -27,7 +27,7 @@ const flash = require('connect-flash');
 const user = require('./Models/user');
 const MongoDBStore = require("connect-mongo");
 // mongo atlas db for production
-const dbUrl =  'mongodb://localhost:27017/placeFinder';
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/placeFinder';
 
 // local mongodb for development 'mongodb://localhost:27017/placeFinder'
 // connect to mongodb database
@@ -56,11 +56,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // To remove data using these defaults:
 app.use(mongoSanitize());
 
-const secret = 'thisshouldbeabettersecret!';
+const secret =  process.env.SECRET || 'thisshouldbeabettersecret!';
 
 // Create a configuration object for the session middleware.
 const sessionConfig = {
-    store: MongoDBStore.create({ mongoUrl: 'mongodb://localhost:27017/placeFinder' }),
+    store: MongoDBStore.create({ mongoUrl: 'mongodb://localhost:27017/placeFinder' || process.env.DB_URL }),
     // Set the name for the session (cookie).
     name: 'session',
     
