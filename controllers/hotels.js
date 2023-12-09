@@ -3,15 +3,17 @@ const Hotel = require("../Models/Hotel");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = 'pk.eyJ1IjoiamFocnVsbzEiLCJhIjoiY2xvOHFwbXN4MDN1bDJwbG13emdsb3VhZCJ9.5VbVtf7OWaznB_-KLd_tKQ';
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
+const moment = require('moment');
 
 
-// export the index to the router
+
 // this logic finds all the hotels from the database and renders it to the index page
 module.exports.index = async (req, res) => {
     const hotels = await Hotel.find({});
-    res.render('pages/index', { hotels })
-}
+    res.render('pages/index', { hotels });
 
+}
+  
 module.exports.renderNewForm = (req, res) => {
     res.render('pages/new');
 }
@@ -47,7 +49,7 @@ module.exports.showHotel = async (req, res,) => {
         req.flash('error', 'Cannot find that hotel!');
         return res.redirect('/hotels');
     }
-    res.render('pages/show', { hotel });
+    res.render('pages/show', { hotel, moment: moment });
 }
 
 

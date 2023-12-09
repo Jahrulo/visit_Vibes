@@ -44,12 +44,12 @@
             <div class="card-body">
                 <h3 class="card-title"><%= hotel.title%></h3>
                <h6 class="card-subtitle mb-2 text-muted">Location: <%= hotel.location%></h6>
-               <h4 class="card-text">Submitted by <%= hotel.author.username%></h4>
                <h5 class="card-text">Description: <%= hotel.description%></h5>
-               <h6 class="card-subtitle mb-2 text-muted">$<%= hotel.price%>/night</h6>
-            </div>
-            <div class="card-footer text-muted">
-                2 days ago
+               <h6 class="card-subtitle mb-2 text-muted">$<%= hotel.price%> /night</h6>
+               <hr>
+               <h6 class="card-text">Submitted by <%= hotel.author.username%> on
+                <%= moment(hotel.createdAt).format('LL') %></h6>
+            
             </div>
             <%  if( currentUser && hotel.author.equals(currentUser._id))  {%>
                 <div class="card-body">
